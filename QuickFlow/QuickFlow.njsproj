@@ -1,0 +1,142 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>QuickFlow</Name>
+    <RootNamespace>QuickFlow</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>3b6c41bd-a322-44c0-9ee7-be9f1e52a9c3</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>node_modules\@vue\cli-service\bin\vue-cli-service.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+    <ScriptArguments>serve</ScriptArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="public\favicon.ico" />
+    <Content Include="public\index.html" />
+    <Content Include="src\App.vue" />
+    <Content Include="src\boot\axios.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\.eslintrc.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\Error404.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\Flows.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\Home.vue" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="src\plugins\vuetify.js" />
+    <Content Include="src\router\index.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\router\routes.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\components\.eslintrc.js" />
+    <Content Include="src\vue-blocks\components\VueBlock.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\components\VueBlockProperty.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\components\VueBlocksContainer.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\components\VueLink.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\helpers\dom.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\helpers\mouse.js">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\vue-blocks\index.js">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="public\" />
+    <Folder Include="src\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\boot\" />
+    <Folder Include="src\vue-blocks\" />
+    <Folder Include="src\plugins\" />
+    <Folder Include="src\router\" />
+    <Folder Include="src\vue-blocks\components\" />
+    <Folder Include="src\vue-blocks\helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="babel.config.js" />
+    <Content Include="src\components\Welcome.vue" />
+    <Content Include="src\main.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+      npm run build
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
